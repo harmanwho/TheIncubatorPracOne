@@ -28,6 +28,31 @@ CREATE TABLE Student (
 );
 
 --
+-- Table structure for table `Faculty`
+--
+CREATE TABLE Faculty (
+    SchoolID INT NOT NULL,
+    FullName TEXT NOT NULL,
+    SpaceRoomID INT NOT NULL,
+    isTeaching BOOLEAN,
+    CONSTRAINT SchoolID_fk FOREIGN KEY (SchoolID) REFERENCES People(SchoolID),
+    CONSTRAINT Fullname_fk FOREIGN KEY (Fullname) REFERENCES People(Fullname),
+    CONSTRAINT SpaceRoomID_fk FOREIGN KEY (SpaceRoomID) REFERENCES SpaceRoom(SpaceRoomID)
+);
+
+--
+-- Table structure for table `Staff`
+--
+CREATE TABLE Staff (
+    SchoolID INT NOT NULL,
+    FullName TEXT NOT NULL,
+    SpaceRoomID INT NOT NULL,
+    CONSTRAINT SchoolID_fk FOREIGN KEY (SchoolID) REFERENCES People(SchoolID),
+    CONSTRAINT Fullname_fk FOREIGN KEY (Fullname) REFERENCES People(Fullname),
+    CONSTRAINT SpaceRoomID_fk FOREIGN KEY (SpaceRoomID) REFERENCES SpaceRoom(SpaceRoomID)
+);
+
+--
 -- Table structure for table `Building`
 --
 CREATE TABLE Building (
