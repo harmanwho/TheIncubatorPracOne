@@ -1,0 +1,101 @@
+BuildingID,BuildingName,BuildingType
+100,sit,ACADEMIC
+101,"tempus, lorem",ACADEMIC
+102,"malesuada ut,",ACADEMIC
+103,"nec, diam. Duis",RESIDENTIAL
+104,"fermentum vel, mauris.",RESIDENTIAL
+105,lacus. Quisque,RESIDENTIAL
+106,tincidunt,ADMINISTRATIVE
+107,"Curabitur consequat, lectus",ADMINISTRATIVE
+108,amet metus.,ADMINISTRATIVE
+109,ac arcu. Nunc,EXTRACURRICULAR
+110,In scelerisque scelerisque,EXTRACURRICULAR
+111,diam luctus,EXTRACURRICULAR
+112,dictum,ACADEMIC
+113,aliquam adipiscing lacus.,ACADEMIC
+114,Curabitur dictum. Phasellus,ACADEMIC
+115,magna.,RESIDENTIAL
+116,"facilisis non, bibendum",RESIDENTIAL
+117,arcu imperdiet,RESIDENTIAL
+118,penatibus et magnis,ADMINISTRATIVE
+119,magna. Duis dignissim,ADMINISTRATIVE
+120,mus. Proin,ADMINISTRATIVE
+121,erat,EXTRACURRICULAR
+122,"magna, malesuada vel,",EXTRACURRICULAR
+123,"sem, consequat nec,",EXTRACURRICULAR
+124,Nunc,ACADEMIC
+125,"vestibulum, neque sed",ACADEMIC
+126,Phasellus,ACADEMIC
+127,"a,",RESIDENTIAL
+128,Donec consectetuer,RESIDENTIAL
+129,"mi felis, adipiscing",RESIDENTIAL
+130,"mi felis,",ADMINISTRATIVE
+131,Phasellus,ADMINISTRATIVE
+132,dictum,ADMINISTRATIVE
+133,mauris. Morbi,EXTRACURRICULAR
+134,blandit.,EXTRACURRICULAR
+135,risus. Nunc ac,EXTRACURRICULAR
+136,ultricies,ACADEMIC
+137,Fusce,ACADEMIC
+138,sed,ACADEMIC
+139,In faucibus. Morbi,RESIDENTIAL
+140,dui augue eu,RESIDENTIAL
+141,turpis.,RESIDENTIAL
+142,arcu. Sed,ADMINISTRATIVE
+143,Nulla eget,ADMINISTRATIVE
+144,"Donec tempus,",ADMINISTRATIVE
+145,euismod enim. Etiam,EXTRACURRICULAR
+146,"malesuada id, erat.",EXTRACURRICULAR
+147,"congue,",EXTRACURRICULAR
+148,Aenean gravida,ACADEMIC
+149,diam dictum sapien.,ACADEMIC
+150,Nullam velit,ACADEMIC
+151,Cras dolor,RESIDENTIAL
+152,Aliquam,RESIDENTIAL
+153,nisl,RESIDENTIAL
+154,Lorem,ADMINISTRATIVE
+155,"Donec est mauris,",ADMINISTRATIVE
+156,risus. Nunc,ADMINISTRATIVE
+157,sapien,EXTRACURRICULAR
+158,"tortor,",EXTRACURRICULAR
+159,posuere,EXTRACURRICULAR
+160,"lacinia vitae,",ACADEMIC
+161,sollicitudin orci sem,ACADEMIC
+162,bibendum. Donec felis,ACADEMIC
+163,adipiscing ligula.,RESIDENTIAL
+164,ante. Vivamus,RESIDENTIAL
+165,"facilisis vitae, orci.",RESIDENTIAL
+166,egestas nunc sed,ADMINISTRATIVE
+167,"lorem lorem, luctus",ADMINISTRATIVE
+168,enim. Etiam imperdiet,ADMINISTRATIVE
+169,commodo ipsum. Suspendisse,EXTRACURRICULAR
+170,lectus pede et,EXTRACURRICULAR
+171,"ut, sem.",EXTRACURRICULAR
+172,faucibus,ACADEMIC
+173,erat neque non,ACADEMIC
+174,sagittis,ACADEMIC
+175,habitant morbi tristique,RESIDENTIAL
+176,"tristique ac,",RESIDENTIAL
+177,facilisi. Sed neque.,RESIDENTIAL
+178,mauris sagittis,ADMINISTRATIVE
+179,Vestibulum ante ipsum,ADMINISTRATIVE
+180,lectus rutrum,ADMINISTRATIVE
+181,"nostra, per inceptos",EXTRACURRICULAR
+182,enim. Nunc ut,EXTRACURRICULAR
+183,"nec,",EXTRACURRICULAR
+184,Maecenas iaculis aliquet,ACADEMIC
+185,Cum,ACADEMIC
+186,est tempor bibendum.,ACADEMIC
+187,erat vitae,RESIDENTIAL
+188,"a,",RESIDENTIAL
+189,tellus.,RESIDENTIAL
+190,"per conubia nostra,",ADMINISTRATIVE
+191,"non, bibendum sed,",ADMINISTRATIVE
+192,"consequat, lectus sit",ADMINISTRATIVE
+193,"elit, pellentesque",EXTRACURRICULAR
+194,sit,EXTRACURRICULAR
+195,aliquet magna,EXTRACURRICULAR
+196,consequat purus.,ACADEMIC
+197,"laoreet, libero",ACADEMIC
+198,nec,ACADEMIC
+199,sed turpis,RESIDENTIAL
