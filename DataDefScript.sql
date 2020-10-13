@@ -88,6 +88,7 @@ CREATE TABLE MedicalData (
     CONSTRAINT SchoolID_fk FOREIGN KEY (SchoolID) REFERENCES Person(SchoolID)
 );
 
+
 --
 -- Table structure for table `CaseData`
 --
@@ -100,6 +101,14 @@ CREATE TABLE CaseData (
     CONSTRAINT treatmentPlanID_fk FOREIGN KEY (treatmentPlanID) REFERENCES TreatmentPlan(treatmentPlanID)
 );
 
+
+--
+-- Table structure for table `TreatmentPlan`
+--
+CREATE TABLE TreatmentPlan (
+    treatmentPlanID INT PRIMARY KEY AUTO_INCREMENT,
+    PrescriptionName TEXT
+);
 
 --
 -- References: if any
