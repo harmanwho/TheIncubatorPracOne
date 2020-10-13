@@ -26,7 +26,7 @@ CREATE TABLE Student(SchoolID INT,
 --
 -- Table structure for table `Faculty`
 --
-CREATE TABLE Student(SchoolID INT,
+CREATE TABLE Faculty(SchoolID INT,
                      fullname TEXT,
                      SpaceRoomID INT,
                      isTeaching BOOLEAN,
@@ -37,7 +37,7 @@ CREATE TABLE Student(SchoolID INT,
 --
 -- Table structure for table `Staff`
 --
-CREATE TABLE Student(SchoolID INT,
+CREATE TABLE Staff(SchoolID INT,
                      fullname TEXT,
                      SpaceRoomID INT,
                      CONSTRAINT SchoolID_fk FOREIGN KEY (SchoolID) REFERENCES People(SchoolID),
