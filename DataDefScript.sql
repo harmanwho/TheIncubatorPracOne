@@ -110,6 +110,7 @@ CREATE TABLE MedicalData (
     Weight INT NOT NULL,
     Age INT NOT NULL,
     Temp FLOAT NOT NULL,
+    TestDate DATE,
     CONSTRAINT SchoolID_fk FOREIGN KEY (SchoolID) REFERENCES Person(SchoolID)
 );
 
@@ -121,7 +122,8 @@ CREATE TABLE CaseData (
     CaseID INT PRIMARY KEY AUTO_INCREMENT,
     MedicalID INT NOT NULL,
     IsHospitalized BOOLEAN NOT NULL,
-    TreatmentPlanID INT,
+    TreatmentPlanID INT NOT NULL,
+    CaseDate DATE NOT NULL,
     CONSTRAINT MedicalID_fk FOREIGN KEY (MedicalID) REFERENCES MedicalData(MedicalID),
     CONSTRAINT treatmentPlanID_fk FOREIGN KEY (treatmentPlanID) REFERENCES TreatmentPlan(treatmentPlanID)
 );
