@@ -71,7 +71,22 @@ CREATE TABLE EventAtendees (
     EventID INT,
     CONSTRAINT SchoolID_fk FOREIGN KEY (SchoolID) REFERENCES Person(SchoolID),
     CONSTRAINT EventID_fk FOREIGN KEY (EventID) REFERENCES Event(EventID)
-);			
+);
+
+
+--
+-- Table structure for table `MedicalData`
+--
+CREATE TABLE MedicalData (
+    SchoolID INT,
+    MedicalID INT PRIMARY KEY AUTO_INCREMENT,
+    isPositive BOOLEAN,
+    height INT,
+    weight INT,
+    age INT,
+    temp FLOAT,
+    CONSTRAINT SchoolID_fk FOREIGN KEY (SchoolID) REFERENCES Person(SchoolID)
+);
 
 
 --
