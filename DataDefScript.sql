@@ -5,6 +5,26 @@
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `Building`
+--
+CREATE TABLE Building (
+    BuildingID INT PRIMARY KEY AUTO_INCREMENT,
+    BuildingName TEXT,
+    BuildingType SET('ACADEMIC', 'RESIDENTIAL', 'ADMINISTRATIVE', 'EXTRACURRICULAR')
+);
+
+--
+-- Table structure for table `SpaceRoom`
+--
+CREATE TABLE SpaceRoom (
+    SpaceRoomID INT PRIMARY KEY AUTO_INCREMENT,
+    SpaceName TEXT,
+    BuildingID INT NOT NULL,
+    CONSTRAINT BuildingID_fk FOREIGN KEY (BuildingID) REFERENCES Building(BuildingID)
+);
+
+
+--
 -- Table structure for table `People`
 --
 CREATE TABLE People (
@@ -19,12 +39,10 @@ CREATE TABLE People (
 --
 CREATE TABLE Student (
     SchoolID INT NOT NULL,
-    FullName TEXT NOT NULL,
     SpaceRoomID INT NOT NULL,
     ClassYear SET('9', '10', '11', '12'),
-    CONSTRAINT SchoolID_fk FOREIGN KEY (SchoolID) REFERENCES People(SchoolID),
-    CONSTRAINT Fullname_fk FOREIGN KEY (Fullname) REFERENCES People(Fullname),
-    CONSTRAINT SpaceRoomID_fk FOREIGN KEY (SpaceRoomID) REFERENCES SpaceRoom(SpaceRoomID)
+    CONSTRAINT StudentSchoolID FOREIGN KEY (SchoolID) REFERENCES People(SchoolID),
+    CONSTRAINT StudentSpaceRoomID FOREIGN KEY (SpaceRoomID) REFERENCES SpaceRoom(SpaceRoomID)
 );
 
 --
@@ -32,12 +50,10 @@ CREATE TABLE Student (
 --
 CREATE TABLE Faculty (
     SchoolID INT NOT NULL,
-    FullName TEXT NOT NULL,
     SpaceRoomID INT NOT NULL,
     IsTeaching BOOLEAN NOT NULL,
-    CONSTRAINT SchoolID_fk FOREIGN KEY (SchoolID) REFERENCES People(SchoolID),
-    CONSTRAINT Fullname_fk FOREIGN KEY (Fullname) REFERENCES People(Fullname),
-    CONSTRAINT SpaceRoomID_fk FOREIGN KEY (SpaceRoomID) REFERENCES SpaceRoom(SpaceRoomID)
+    CONSTRAINT FacultySchoolID FOREIGN KEY (SchoolID) REFERENCES People(SchoolID),
+    CONSTRAINT FacultySpaceRoomID FOREIGN KEY (SpaceRoomID) REFERENCES SpaceRoom(SpaceRoomID)
 );
 
 --
@@ -45,31 +61,9 @@ CREATE TABLE Faculty (
 --
 CREATE TABLE Staff (
     SchoolID INT NOT NULL,
-    FullName TEXT NOT NULL,
     SpaceRoomID INT NOT NULL,
-    CONSTRAINT SchoolID_fk FOREIGN KEY (SchoolID) REFERENCES People(SchoolID),
-    CONSTRAINT Fullname_fk FOREIGN KEY (Fullname) REFERENCES People(Fullname),
-    CONSTRAINT SpaceRoomID_fk FOREIGN KEY (SpaceRoomID) REFERENCES SpaceRoom(SpaceRoomID)
-);
-
---
--- Table structure for table `Building`
---
-CREATE TABLE Building (
-    BuildingID INT PRIMARY KEY AUTO_INCREMENT,
-    BuildingName TEXT,
-    BuildingType SET('ACADEMIC', 'RESIDENTIAL', 'ADMINISTRATIVE', 'EXTRACURRICULAR')
-);
-
-
---
--- Table structure for table `SpaceRoom`
---
-CREATE TABLE SpaceRoom (
-    SpaceRoomID INT PRIMARY KEY AUTO_INCREMENT,
-    SpaceName TEXT,
-    BuildingID INT NOT NULL,
-    CONSTRAINT BuildingID_fk FOREIGN KEY (BuildingID) REFERENCES Building(BuildingID)
+    CONSTRAINT StaffSchoolID FOREIGN KEY (SchoolID) REFERENCES People(SchoolID),
+    CONSTRAINT StaffSpaceRoomID FOREIGN KEY (SpaceRoomID) REFERENCES SpaceRoom(SpaceRoomID)
 );
 
 
@@ -83,7 +77,7 @@ CREATE TABLE Event (
     EndTime TIME NOT NULL,
     EventName TEXT NOT NULL,
     EventDay DATE NOT NULL,
-    CONSTRAINT SpaceRoomID_fk FOREIGN KEY (SpaceRoomID) REFERENCES SpaceRoom(SpaceRoomID)
+    CONSTRAINT EventSpaceRoomID FOREIGN KEY (SpaceRoomID) REFERENCES SpaceRoom(SpaceRoomID)
 );
 
 
@@ -94,7 +88,7 @@ CREATE TABLE EventAtendees (
     AttendeeID INT PRIMARY KEY AUTO_INCREMENT,
     SchoolID INT NOT NULL,
     EventID INT NOT NULL,
-    CONSTRAINT SchoolID_fk FOREIGN KEY (SchoolID) REFERENCES Person(SchoolID),
+    CONSTRAINT AttendeeSchoolID FOREIGN KEY (SchoolID) REFERENCES People(SchoolID),
     CONSTRAINT EventID_fk FOREIGN KEY (EventID) REFERENCES Event(EventID)
 );
 
@@ -111,7 +105,16 @@ CREATE TABLE MedicalData (
     Age INT NOT NULL,
     Temp FLOAT NOT NULL,
     TestDate DATE,
-    CONSTRAINT SchoolID_fk FOREIGN KEY (SchoolID) REFERENCES Person(SchoolID)
+    CONSTRAINT MedicalSchoolID FOREIGN KEY (SchoolID) REFERENCES People(SchoolID)
+);
+
+
+--
+-- Table structure for table `TreatmentPlan`
+--
+CREATE TABLE TreatmentPlan (
+    TreatmentPlanID INT PRIMARY KEY AUTO_INCREMENT,
+    PrescriptionName TEXT NOT NULL
 );
 
 
@@ -128,14 +131,6 @@ CREATE TABLE CaseData (
     CONSTRAINT treatmentPlanID_fk FOREIGN KEY (treatmentPlanID) REFERENCES TreatmentPlan(treatmentPlanID)
 );
 
-
---
--- Table structure for table `TreatmentPlan`
---
-CREATE TABLE TreatmentPlan (
-    TreatmentPlanID INT PRIMARY KEY AUTO_INCREMENT,
-    PrescriptionName TEXT NOT NULL
-);
 
 --
 -- References: if any
