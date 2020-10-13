@@ -47,7 +47,7 @@ CREATE TABLE Staff(SchoolID INT,
 --
 -- Table structure for table `Building`
 --
-CREATE TABLE Building(buildingID INT AUTO INCREMENT PRIMARY KEY,
+CREATE TABLE Building(buildingID INT PRIMARY KEY auto_increment,
                       buildingName TEXT,
                       buildingType [ACADEMIC, RESIDENTIAL,
                                     ADMINISTRATIVE, EXTRACURRICULAR]);
@@ -56,7 +56,7 @@ CREATE TABLE Building(buildingID INT AUTO INCREMENT PRIMARY KEY,
 --
 -- Table structure for table `SpaceRoom`
 --
-CREATE TABLE SpaceRoom(SpaceRoomID INT AUTO INCREMENT PRIMARY KEY,
+CREATE TABLE SpaceRoom(SpaceRoomID INT PRIMARY KEY auto_increment,
                        SpaceName TEXT,
                        buildingID INT,
                        CONSTRAINT buildingID_fk FOREIGN KEY (buildingID) REFERENCES Building(buildingID));
@@ -64,7 +64,7 @@ CREATE TABLE SpaceRoom(SpaceRoomID INT AUTO INCREMENT PRIMARY KEY,
 --
 -- Table structure for table `Event`
 --
-CREATE TABLE Event(EventID INT AUTO INCREMENT PRIMARY KEY,
+CREATE TABLE Event(EventID INT PRIMARY KEY auto_increment,
                    SpaceRoomID INT,
                    startTime TIME,
                    endTime TIME,
@@ -76,7 +76,7 @@ CREATE TABLE Event(EventID INT AUTO INCREMENT PRIMARY KEY,
 -- Table structure for table `EventAttendees`
 --
 CREATE TABLE EventAtendees(SchoolID INT,
-                           AtendeeID INT AUTO INCREMENT PRIMARY KEY,
+                           AtendeeID INT PRIMARY KEY auto_increment,
                            EventID INT,
                            CONSTRAINT SchoolID_fk FOREIGN KEY (SchoolID) REFERENCES Person(SchoolID),
                            CONSTRAINT EventID_fk FOREIGN KEY (EventID) REFERENCES Event(EventID));
