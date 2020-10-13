@@ -22,7 +22,28 @@ CREATE TABLE Student(SchoolID INT,
                      CONSTRAINT SchoolID_fk FOREIGN KEY (SchoolID) REFERENCES People(SchoolID),
                      CONSTRAINT fullname_fk FOREIGN KEY (fullname) REFERENCES People(fullname),
                      CONSTRAINT SpaceRoomID_fk FOREIGN KEY (SpaceRoomID) REFERENCES SpaceRoom(SpaceRoomID));
-
+											      
+--
+-- Table structure for table `Faculty`
+--
+CREATE TABLE Student(SchoolID INT,
+                     fullname TEXT,
+                     SpaceRoomID INT,
+                     isTeaching BOOLEAN,
+                     CONSTRAINT SchoolID_fk FOREIGN KEY (SchoolID) REFERENCES People(SchoolID),
+                     CONSTRAINT fullname_fk FOREIGN KEY (fullname) REFERENCES People(fullname),
+                     CONSTRAINT SpaceRoomID_fk FOREIGN KEY (SpaceRoomID) REFERENCES SpaceRoom(SpaceRoomID));
+											      
+--
+-- Table structure for table `Staff`
+--
+CREATE TABLE Student(SchoolID INT,
+                     fullname TEXT,
+                     SpaceRoomID INT,
+                     CONSTRAINT SchoolID_fk FOREIGN KEY (SchoolID) REFERENCES People(SchoolID),
+                     CONSTRAINT fullname_fk FOREIGN KEY (fullname) REFERENCES People(fullname),
+                     CONSTRAINT SpaceRoomID_fk FOREIGN KEY (SpaceRoomID) REFERENCES SpaceRoom(SpaceRoomID));
+											      
 --
 -- Table structure for table `Building`
 --
@@ -39,6 +60,7 @@ CREATE TABLE SpaceRoom(SpaceRoomID INT AUTO INCREMENT PRIMARY KEY,
                        SpaceName TEXT,
                        buildingID INT,
                        CONSTRAINT buildingID_fk FOREIGN KEY (buildingID) REFERENCES Building(buildingID));
+											     
 --
 -- Table structure for table `Event`
 --
@@ -49,6 +71,7 @@ CREATE TABLE Event(EventID INT AUTO INCREMENT PRIMARY KEY,
                    EventName TEXT,
                    day DATE,
                    CONSTRAINT SpaceRoomID_fk FOREIGN KEY (SpaceRoomID) REFERENCES SpaceRoom(SpaceRoomID));
+											    
 --
 -- Table structure for table `EventAttendees`
 --
@@ -56,7 +79,8 @@ CREATE TABLE EventAtendees(SchoolID INT,
                            AtendeeID INT AUTO INCREMENT PRIMARY KEY,
                            EventID INT,
                            CONSTRAINT SchoolID_fk FOREIGN KEY (SchoolID) REFERENCES Person(SchoolID),
-                           CONSTRAINT EventID_fk FOREIGN KEY (EventID) REFERENCES Event(EventID));			    
+                           CONSTRAINT EventID_fk FOREIGN KEY (EventID) REFERENCES Event(EventID));
+											
 --
 -- Reference: if any
 -- Note: if any
