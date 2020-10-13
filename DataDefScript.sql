@@ -8,7 +8,7 @@
 -- Table structure for table `People`
 --
 CREATE TABLE People (
-    SchoolID INT PRIMARY KEY,
+    SchoolID INT PRIMARY KEY AUTO_INCREMENT,
 	FullName TEXT NOT NULL,
 	IsQuar BOOLEAN,
     GroupID INT NOT NULL
@@ -21,7 +21,7 @@ CREATE TABLE Student (
     SchoolID INT NOT NULL,
     FullName TEXT NOT NULL,
     SpaceRoomID INT NOT NULL,
-    ClassYear(col SET(9, 10, 11, 12)),
+    ClassYear (col SET(9, 10, 11, 12)),
     CONSTRAINT SchoolID_fk FOREIGN KEY (SchoolID) REFERENCES People(SchoolID),
     CONSTRAINT Fullname_fk FOREIGN KEY (Fullname) REFERENCES People(Fullname),
     CONSTRAINT SpaceRoomID_fk FOREIGN KEY (SpaceRoomID) REFERENCES SpaceRoom(SpaceRoomID)
@@ -41,9 +41,9 @@ CREATE TABLE Building (
 -- Table structure for table `SpaceRoom`
 --
 CREATE TABLE SpaceRoom (
-    SpaceRoomID INT NOT NULL AUTO_INCREMENT,
+    SpaceRoomID INT PRIMARY KEY AUTO_INCREMENT,
     SpaceName TEXT,
-    BuildingID INT,
+    BuildingID INT NOT NULL,
     CONSTRAINT BuildingID_fk FOREIGN KEY (BuildingID) REFERENCES Building(BuildingID)
 );
 
