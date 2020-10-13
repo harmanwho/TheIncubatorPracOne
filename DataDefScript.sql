@@ -21,7 +21,7 @@ CREATE TABLE Student (
     SchoolID INT NOT NULL,
     FullName TEXT NOT NULL,
     SpaceRoomID INT NOT NULL,
-    ClassYear (col SET(9, 10, 11, 12)),
+    ClassYear SET(9, 10, 11, 12),
     CONSTRAINT SchoolID_fk FOREIGN KEY (SchoolID) REFERENCES People(SchoolID),
     CONSTRAINT Fullname_fk FOREIGN KEY (Fullname) REFERENCES People(Fullname),
     CONSTRAINT SpaceRoomID_fk FOREIGN KEY (SpaceRoomID) REFERENCES SpaceRoom(SpaceRoomID)
@@ -33,7 +33,7 @@ CREATE TABLE Student (
 CREATE TABLE Building (
     BuildingID INT PRIMARY KEY AUTO_INCREMENT,
     BuildingName TEXT,
-    BuildingType (col SET('ACADEMIC', 'RESIDENTIAL', 'ADMINISTRATIVE', 'EXTRACURRICULAR'))
+    BuildingType SET('ACADEMIC', 'RESIDENTIAL', 'ADMINISTRATIVE', 'EXTRACURRICULAR')
 );
 
 
