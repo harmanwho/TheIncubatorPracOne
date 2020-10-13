@@ -7,7 +7,7 @@
 --
 -- Table structure for table `People`
 --
-CREATE TABLE People(SchoolID INT PRIMARY KEY,
+CREATE TABLE People(SchoolID INT PRIMARY KEY auto_increment,
 		    fullname TEXT,
 		    isQuar BOOLEAN,
                     groupID INT);
