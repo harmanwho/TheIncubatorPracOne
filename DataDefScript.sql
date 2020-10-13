@@ -34,7 +34,7 @@ CREATE TABLE Faculty (
     SchoolID INT NOT NULL,
     FullName TEXT NOT NULL,
     SpaceRoomID INT NOT NULL,
-    isTeaching BOOLEAN,
+    IsTeaching BOOLEAN NOT NULL,
     CONSTRAINT SchoolID_fk FOREIGN KEY (SchoolID) REFERENCES People(SchoolID),
     CONSTRAINT Fullname_fk FOREIGN KEY (Fullname) REFERENCES People(Fullname),
     CONSTRAINT SpaceRoomID_fk FOREIGN KEY (SpaceRoomID) REFERENCES SpaceRoom(SpaceRoomID)
@@ -78,11 +78,11 @@ CREATE TABLE SpaceRoom (
 --
 CREATE TABLE Event (
     EventID INT PRIMARY KEY AUTO_INCREMENT,
-    SpaceRoomID INT,
-    StartTime TIME,
-    EndTime TIME,
-    EventName TEXT,
-    EventDay DATE,
+    SpaceRoomID INT NOT NULL,
+    StartTime TIME NOT NULL,
+    EndTime TIME NOT NULL,
+    EventName TEXT NOT NULL,
+    EventDay DATE NOT NULL,
     CONSTRAINT SpaceRoomID_fk FOREIGN KEY (SpaceRoomID) REFERENCES SpaceRoom(SpaceRoomID)
 );
 
@@ -92,8 +92,8 @@ CREATE TABLE Event (
 --
 CREATE TABLE EventAtendees (
     AttendeeID INT PRIMARY KEY AUTO_INCREMENT,
-    SchoolID INT,
-    EventID INT,
+    SchoolID INT NOT NULL,
+    EventID INT NOT NULL,
     CONSTRAINT SchoolID_fk FOREIGN KEY (SchoolID) REFERENCES Person(SchoolID),
     CONSTRAINT EventID_fk FOREIGN KEY (EventID) REFERENCES Event(EventID)
 );
@@ -103,13 +103,13 @@ CREATE TABLE EventAtendees (
 -- Table structure for table `MedicalData`
 --
 CREATE TABLE MedicalData (
-    SchoolID INT,
+    SchoolID INT NOT NULL,
     MedicalID INT PRIMARY KEY AUTO_INCREMENT,
-    isPositive BOOLEAN,
-    height INT,
-    weight INT,
-    age INT,
-    temp FLOAT,
+    IsPositive BOOLEAN NOT NULL,
+    Height INT NOT NULL,
+    Weight INT NOT NULL,
+    Age INT NOT NULL,
+    Temp FLOAT NOT NULL,
     CONSTRAINT SchoolID_fk FOREIGN KEY (SchoolID) REFERENCES Person(SchoolID)
 );
 
@@ -119,9 +119,9 @@ CREATE TABLE MedicalData (
 --
 CREATE TABLE CaseData (
     CaseID INT PRIMARY KEY AUTO_INCREMENT,
-    MedicalID INT,
-    isHospitalized BOOLEAN,
-    treatmentPlanID INT,
+    MedicalID INT NOT NULL,
+    IsHospitalized BOOLEAN NOT NULL,
+    TreatmentPlanID INT,
     CONSTRAINT MedicalID_fk FOREIGN KEY (MedicalID) REFERENCES MedicalData(MedicalID),
     CONSTRAINT treatmentPlanID_fk FOREIGN KEY (treatmentPlanID) REFERENCES TreatmentPlan(treatmentPlanID)
 );
@@ -131,8 +131,8 @@ CREATE TABLE CaseData (
 -- Table structure for table `TreatmentPlan`
 --
 CREATE TABLE TreatmentPlan (
-    treatmentPlanID INT PRIMARY KEY AUTO_INCREMENT,
-    PrescriptionName TEXT
+    TreatmentPlanID INT PRIMARY KEY AUTO_INCREMENT,
+    PrescriptionName TEXT NOT NULL
 );
 
 --
