@@ -30,8 +30,10 @@ CREATE TABLE SpaceRoom (
 CREATE TABLE People (
     SchoolID INT PRIMARY KEY AUTO_INCREMENT,
 	FullName TEXT NOT NULL,
+    SpaceRoomID INT NOT NULL,
 	IsQuar BOOLEAN,
-    GroupID INT NOT NULL
+    GroupID INT NOT NULL,
+    CONSTRAINT SpaceRoomID_fk FOREIGN KEY (SpaceRoomID) REFERENCES SpaceRoom(SpaceRoomID)
 );
 
 --
@@ -39,10 +41,8 @@ CREATE TABLE People (
 --
 CREATE TABLE Student (
     SchoolID INT NOT NULL,
-    SpaceRoomID INT NOT NULL,
     ClassYear SET('9', '10', '11', '12'),
     CONSTRAINT StudentSchoolID FOREIGN KEY (SchoolID) REFERENCES People(SchoolID),
-    CONSTRAINT StudentSpaceRoomID FOREIGN KEY (SpaceRoomID) REFERENCES SpaceRoom(SpaceRoomID)
 );
 
 --
@@ -50,10 +50,8 @@ CREATE TABLE Student (
 --
 CREATE TABLE Faculty (
     SchoolID INT NOT NULL,
-    SpaceRoomID INT NOT NULL,
     IsTeaching BOOLEAN NOT NULL,
-    CONSTRAINT FacultySchoolID FOREIGN KEY (SchoolID) REFERENCES People(SchoolID),
-    CONSTRAINT FacultySpaceRoomID FOREIGN KEY (SpaceRoomID) REFERENCES SpaceRoom(SpaceRoomID)
+    CONSTRAINT FacultySchoolID FOREIGN KEY (SchoolID) REFERENCES People(SchoolID)
 );
 
 --
@@ -61,9 +59,7 @@ CREATE TABLE Faculty (
 --
 CREATE TABLE Staff (
     SchoolID INT NOT NULL,
-    SpaceRoomID INT NOT NULL,
     CONSTRAINT StaffSchoolID FOREIGN KEY (SchoolID) REFERENCES People(SchoolID),
-    CONSTRAINT StaffSpaceRoomID FOREIGN KEY (SpaceRoomID) REFERENCES SpaceRoom(SpaceRoomID)
 );
 
 
