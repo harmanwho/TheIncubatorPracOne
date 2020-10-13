@@ -1,0 +1,93 @@
+---
+title: "Practicum 1"
+author: A. Daccache, H. Sidhu, R. Zipp
+output: html_notebook
+---
+
+### Conceptual Model
+
+![UML Class Diagram](UML.jpeg)
+
+### Logical Data Model
+hi
+
+##### ERD
+
+![IE-Crow's Foot: <https://app.lucidchart.com/invitations/accept/6fb653e2-047e-4435-8fa4-3648fb205f82>](ERD.jpeg)
+
+
+### SQL Data Definition Statements
+
+
+##### Building Table
+![ ](DDL_Building.jpeg)  
+
+
+##### SpaceRoom Table
+![ ](DDL_SpaceRoom.jpeg)  
+
+
+
+##### People Table
+![ ](DDL_People.jpeg)  
+
+
+
+##### Student Table
+![ ](DDL_Student.jpeg)  
+
+
+##### Faculty Table
+![ ](DDL_Faculty.jpeg)  
+
+
+
+##### Staff Table
+![ ](DDL_Staff.jpeg)  
+
+
+
+##### Event Table
+![ ](DDL_Event.jpeg)  
+
+
+
+##### EventAtendees Table
+![ ](DDL_EventAtendees.jpeg)  
+
+
+
+##### MedicalData Table
+![ ](DDL_MedicalData.jpeg)  
+
+
+
+##### TreatmentPlan Table
+![ ](DDL_TreatmentPlan.jpeg)  
+
+
+##### CaseData Table
+![ ](DDL_CaseData.jpeg)  
+
+
+#### BCNF
+ - explanation for 1NF through BCNF
+
+### Queries 
+hi
+
+##### Query A
+hi
+
+##### Query B
+hi
+
+##### Query C
+hi
+
+##### Query D
+hi
+
+##### Query E
+hi
+
