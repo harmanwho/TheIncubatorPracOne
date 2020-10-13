@@ -33,10 +33,30 @@ CREATE TABLE Building(buildingID INT AUTO INCREMENT PRIMARY KEY,
 
 
 --
--- Table structure for table `TableName`
+-- Table structure for table `SpaceRoom`
 --
-
-
+CREATE TABLE SpaceRoom(SpaceRoomID INT AUTO INCREMENT PRIMARY KEY,
+                       SpaceName TEXT,
+                       buildingID INT,
+                       CONSTRAINT buildingID_fk FOREIGN KEY (buildingID) REFERENCES Building(buildingID));
+--
+-- Table structure for table `Event`
+--
+CREATE TABLE Event(EventID INT AUTO INCREMENT PRIMARY KEY,
+                   SpaceRoomID INT,
+                   startTime TIME,
+                   endTime TIME,
+                   EventName TEXT,
+                   day DATE,
+                   CONSTRAINT SpaceRoomID_fk FOREIGN KEY (SpaceRoomID) REFERENCES SpaceRoom(SpaceRoomID));
+--
+-- Table structure for table `EventAttendees`
+--
+CREATE TABLE EventAtendees(SchoolID INT,
+                           AtendeeID INT AUTO INCREMENT PRIMARY KEY,
+                           EventID INT,
+                           CONSTRAINT SchoolID_fk FOREIGN KEY (SchoolID) REFERENCES Person(SchoolID),
+                           CONSTRAINT EventID_fk FOREIGN KEY (EventID) REFERENCES Event(EventID));			    
 --
 -- Reference: if any
 -- Note: if any
