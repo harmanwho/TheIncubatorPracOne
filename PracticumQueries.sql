@@ -19,14 +19,15 @@ SELECT People.FullName, People.SchoolID, MedicalData.MedicalID, MedicalData.Temp
 	GROUP BY People.FullName, People.SchoolID, MedicalData.MedicalID, MedicalData.Temp
 	HAVING (MedicalData.Temp) > 99;
 
-/** Query 3: We’re trying to find a particular student named Jane who went
+/** Query 3: We’re trying to find a particular student named Carson who went
  to a particular event but don’t know her last name. Contains a complex search criterion using AND, OR, or LIKE */
  
- SELECT Student.SchoolID, People.FullName, MedicalData.isPositive, EventAttendees.EventID
- WHERE People.FullName LIKE "Jane%" 
- AND People.SchoolID = Student.SchoolID 
- AND EventAttendees.SchoolID = People.SchoolID
- AND MedicalData.SchoolID = Student.SchoolID ;
+SELECT People.FullName, Student.SchoolID, EventAtendees.EventID, MedicalData.isPositive
+	FROM People, Student, EventAtendees, MedicalData
+	WHERE People.FullName LIKE "Carson%" 
+	AND People.SchoolID = Student.SchoolID 
+	AND EventAtendees.SchoolID = People.SchoolID
+	AND MedicalData.SchoolID = Student.SchoolID ;
 
 /** Query 4: Partition everyone in the school by their group ID and by their COVID status. 
 Contains an advanced query mechanisms such as RCTE, PARTITION BY, or SELECT CASE/WHEN. */
