@@ -14,10 +14,10 @@ SELECT People.FullName, MedicalData.IsPositive, Event.EventName, Event.EventDay
  Contains Group by with a having clause */ 
 
 SELECT People.FullName, People.SchoolID, MedicalData.MedicalID, MedicalData.Temp
-FROM People, MedicalData
-WHERE People.SchoolID = MedicalData.SchoolID
-GROUP BY MedicalData.Temp
-HAVING (MedicalData.Temp) > 99;
+	FROM People, MedicalData
+	WHERE People.SchoolID = MedicalData.SchoolID
+	GROUP BY People.FullName, People.SchoolID, MedicalData.MedicalID, MedicalData.Temp
+	HAVING (MedicalData.Temp) > 99;
 
 /** Query 3: We’re trying to find a particular student named Jane who went
  to a particular event but don’t know her last name. Contains a complex search criterion using AND, OR, or LIKE */
