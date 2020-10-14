@@ -1,9 +1,14 @@
 /** Query 1 : Find out the events for which the attendees must be contacted because of 
 potential exposure. Contains subquery and inner join of at least 3 tables */
 
-SELECT People.FullName, MedicalData.isPositive, Event.EventName, Event.Day FROM ((People 
-INNER JOIN People ON People.SchoolID = MedicalData.SchoolID) 
-INNER JOIN Event on Event.EventID == EventAttendees.EventID AND EventAttendees.SchoolID = People.SchoolID);
+SELECT People.FullName, MedicalData.IsPositive, Event.EventName, Event.EventDay 
+    FROM People
+        INNER JOIN MedicalData 
+        ON People.SchoolID = MedicalData.SchoolID
+        INNER JOIN EventAtendees
+        ON EventAtendees.SchoolID = People.SchoolID
+        INNER JOIN Event
+        ON Event.EventID = EventAtendees.EventID;
 
 /** Query 2: Select all people at school and group by those who have a temp over 100. 
  Contains Group by with a having clause */ 
