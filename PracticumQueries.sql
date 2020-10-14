@@ -22,3 +22,14 @@ HAVING (MedicalData.Temp) > 99;
  AND People.SchoolID = Student.SchoolID 
  AND EventAttendees.SchoolID = People.SchoolID
  AND MedicalData.SchoolID = Student.SchoolID ;
+
+/** Query 4: Partition everyone in the school by their group ID and by their COVID status. 
+Contains an advanced query mechanisms such as RCTE, PARTITION BY, or SELECT CASE/WHEN. */
+
+SELECT People.SchoolID, People.FullName, People.GroupID, MedicalData.IsPositive
+FROM People, MedicalData
+WHERE People.SchoolID = MedicalData.SchoolID
+PARTITION BY LIST(People.GroupID) (
+PARTITION not_Positive VALUES BOOL(FALSE),
+PARTITION is_Positive VALUES BOOL(TRUE)
+);
