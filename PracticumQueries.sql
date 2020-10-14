@@ -42,6 +42,7 @@ PARTITION is_Positive VALUES BOOL(TRUE)
 
 /** Query 5: Return the treatment plan for each COVID case to compare drugs used. */
 
-SELECT TreatmentPlan.PrecriptionName, CaseData.CaseID,
-FROM TreatmentPlan, CaseData
-INNER JOIN (TreatmentPlan ON CaseData.TreatmentPlanID = TreatmentPlan.TreatmentPlanID);
+SELECT TreatmentPlan.PrescriptionName, CaseData.CaseID
+	FROM TreatmentPlan
+		INNER JOIN CaseData
+        ON CaseData.TreatmentPlanID = TreatmentPlan.TreatmentPlanID;
