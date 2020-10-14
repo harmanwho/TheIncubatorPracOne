@@ -33,3 +33,9 @@ PARTITION BY LIST(People.GroupID) (
 PARTITION not_Positive VALUES BOOL(FALSE),
 PARTITION is_Positive VALUES BOOL(TRUE)
 );
+
+/** Query 5: Return the treatment plan for each COVID case to compare drugs used. */
+
+SELECT TreatmentPlan.PrecriptionName, CaseData.CaseID,
+FROM TreatmentPlan, CaseData
+INNER JOIN (TreatmentPlan ON CaseData.TreatmentPlanID = TreatmentPlan.TreatmentPlanID);
